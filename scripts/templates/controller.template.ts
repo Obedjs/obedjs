@@ -1,7 +1,7 @@
-
+export const controllerTemplate = (name: string) => `
 import { Request, Response } from 'express';
 
-export class UserController {
+export class ${name}Controller {
   public async get(req: Request, res: Response): Promise<void> {
     // Your logic here
   }
@@ -18,3 +18,4 @@ export class UserController {
     // Your logic here
   }
 }
+`;

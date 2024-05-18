@@ -1,7 +1,7 @@
 
 import { Request, Response } from 'express';
 
-export class TestController {
+export class PostController {
   public async get(req: Request, res: Response): Promise<void> {
     // Your logic here
   }
@@ -18,4 +18,3 @@ export class TestController {
     // Your logic here
   }
 }
-  

@@ -1,5 +1,5 @@
 
-import { UserController } from '../../controllers/user/user.controller';
+import { UserController } from '../../user/user.controller';
 
 describe('User controller', () => {
   it('should be defined', () => {
@@ -9,4 +9,3 @@ describe('User controller', () => {
 
   // Add more tests here
 });
-  
