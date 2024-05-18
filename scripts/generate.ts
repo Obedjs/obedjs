@@ -16,8 +16,6 @@ if (args.length < 2) {
 const [type, name] = args;
 const lowerCaseName = name.toLowerCase();
 
-
-
 const dirMap: { [key: string]: string } = {
   controller: `controllers/${lowerCaseName}`,
   service: `services/${lowerCaseName}`,
@@ -27,6 +25,7 @@ const dirMap: { [key: string]: string } = {
   config: `config`,
   test: `controllers/${lowerCaseName}/__tests__`,
   e2e: `tests/e2e`,
+  dto:  `dto/${lowerCaseName}`,
 };
 
 

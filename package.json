@@ -17,6 +17,7 @@
   "license": "ISC",
   "description": "A lightweight framework built on top of Express.js for rapidly developing APIs with Node.js and Express",
   "dependencies": {
+    "class-validator": "^0.14.1",
     "express": "^4.19.2",
     "inquirer": "^9.2.22",
     "mongoose": "^8.4.0",
