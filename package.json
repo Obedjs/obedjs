@@ -9,7 +9,7 @@
     "start:dev": "npm-run-all build start:dev-only",
     "start:dev-only": "nodemon src/app.ts",
     "build": "tsc",
-    "test": "jest --config jest.config.js --watchAll", 
+    "test": "jest --config jest.config.js --watchAll",
     "test:e2e": "jest --config jest.e2e.config.js --watchAll"
   },
   "keywords": [],
@@ -17,10 +17,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "inquirer": "^9.2.22",
+    "mongoose": "^8.4.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/inquirer": "^9.0.7",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.12",
     "@types/supertest": "^6.0.2",

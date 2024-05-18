@@ -6,6 +6,8 @@ import { middlewareTemplate } from '../templates/middleware.template';
 import { configTemplate } from '../templates/config.template';
 import { testTemplate } from '../templates/test.template';
 import { e2eTemplate } from '../templates/e2e.template';
+import { mongodbModelTemplate } from '../templates/mongodb-model-template';
+import { typeormEntityTemplate } from '../templates/typeorm-entity-template';
 
 export const templates = {
   controller: controllerTemplate,
@@ -16,4 +18,7 @@ export const templates = {
   config: configTemplate,
   test: testTemplate,
   e2e: e2eTemplate,
+   modelMongo: mongodbModelTemplate,
+  modelRdbms: typeormEntityTemplate,
 };
+

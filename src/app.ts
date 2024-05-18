@@ -4,7 +4,7 @@ import appRoutes from './routes/app/app.route';
 const app: Application = express();
 
 app.use(express.json());
-app.use('/', appRoutes);  // Use the generated route
+app.use('/', appRoutes);
 
 const PORT: number = parseInt(process.env.PORT || '3000', 10);
 

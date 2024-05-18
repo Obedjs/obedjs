@@ -16,6 +16,8 @@ if (args.length < 2) {
 const [type, name] = args;
 const lowerCaseName = name.toLowerCase();
 
+
+
 const dirMap: { [key: string]: string } = {
   controller: `controllers/${lowerCaseName}`,
   service: `services/${lowerCaseName}`,
@@ -32,8 +34,8 @@ const fileExists = (filePath: string) => {
   return fs.existsSync(filePath);
 };
 
-const generateFile = (type: string, name: string) => {
-  const template = templates[type as keyof typeof templates];
+const generateFile = async (type: string, name: string) => {
+  let template = templates[type as keyof typeof templates];
   if (!template) {
     console.error(`${colors.red}Unknown type: ${type}${colors.reset}`);
     process.exit(1);
@@ -79,10 +81,32 @@ const generateE2ETestFile = (name: string) => {
   writeFile(filePath, content);
 };
 
-generateFile(type, name);
+// Check if the type is "all" and generate all resources accordingly
+if (type === "all") {
+   generateFile("controller", name);
+   generateFile("service", name);
+   generateFile("route", name);
+
+   // Generate test files for all resource types
+  generateTestFile("controller", name);
+  generateTestFile("service", name);
+  generateTestFile("route", name);
+
+  // Generate e2e test file for the "route" type
+  generateE2ETestFile(name);
+} else {
+   generateFile(type, name);
+}
+
+//generateFile(type, name);
+// Generate test files only if the type is not "e2e", "model", "middleware", or "config"
+
 if (type !== 'e2e' && type !== 'model' && type !== 'middleware' && type !== 'config') {
   generateTestFile(type, name);
 }
 if (type === 'route') {
   generateE2ETestFile(name);
 }
+
+
+
