@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A lightweight framework built on top of Express.js for rapidly developing APIs with Node.js and Express",
   "dependencies": {
     "express": "^4.19.2",
     "inquirer": "^9.2.22",

@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app_route_1 = __importDefault(require("./routes/app/app.route"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use('/', app_route_1.default); // Use the generated route
+app.use('/', app_route_1.default);
 const PORT = parseInt(process.env.PORT || '3000', 10);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
