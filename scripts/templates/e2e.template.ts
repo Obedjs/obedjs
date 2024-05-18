@@ -1,6 +1,6 @@
 export const e2eTemplate = (name: string) => `
 import request from 'supertest';
-import app from '../../app'; // Adjust the import according to your app's entry point
+import app from '../../app'; 
 
 describe('${name} E2E', () => {
   it('should GET /${name.toLowerCase()}', async () => {

@@ -14,14 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const app_1 = __importDefault(require("../../app"));
-describe('Post E2E', () => {
-    it('should GET /post', () => __awaiter(void 0, void 0, void 0, function* () {
-        const res = yield (0, supertest_1.default)(app_1.default).get('/post');
+describe('App E2E', () => {
+    it('should GET /app', () => __awaiter(void 0, void 0, void 0, function* () {
+        const res = yield (0, supertest_1.default)(app_1.default).get('/app');
         expect(res.statusCode).toEqual(200);
         // Add more assertions here
     }));
-    it('should POST /post', () => __awaiter(void 0, void 0, void 0, function* () {
-        const res = yield (0, supertest_1.default)(app_1.default).post('/post').send({
+    it('should POST /app', () => __awaiter(void 0, void 0, void 0, function* () {
+        const res = yield (0, supertest_1.default)(app_1.default).post('/app').send({
         // Add payload here
         });
         expect(res.statusCode).toEqual(201);

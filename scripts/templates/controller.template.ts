@@ -1,8 +1,16 @@
+
 export const controllerTemplate = (name: string) => `
 import { Request, Response } from 'express';
+import { ${name}Service } from '../../services/${name.toLocaleLowerCase()}/${name.toLocaleLowerCase()}.service'; 
 
 export class ${name}Controller {
-  public async get(req: Request, res: Response): Promise<void> {
+     private readonly service: ${name}Service;
+
+  constructor(service: ${name}Service) {
+    this.service = service; 
+  }
+
+  public async fetchAll(req: Request, res: Response): Promise<void> {
     // Your logic here
   }
 

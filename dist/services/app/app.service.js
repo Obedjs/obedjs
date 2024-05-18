@@ -9,30 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostController = void 0;
-class PostController {
-    constructor(service) {
-        this.service = service;
-    }
-    fetchAll(req, res) {
+exports.AppService = void 0;
+class AppService {
+    getHello() {
         return __awaiter(this, void 0, void 0, function* () {
-            // Your logic here
-        });
-    }
-    create(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            // Your logic here
-        });
-    }
-    update(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            // Your logic here
-        });
-    }
-    delete(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            // Your logic here
+            return "";
         });
     }
 }
-exports.PostController = PostController;
+exports.AppService = AppService;
