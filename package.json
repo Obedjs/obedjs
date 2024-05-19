@@ -12,10 +12,10 @@
     "test": "jest --config jest.config.js --watchAll",
     "test:e2e": "jest --config jest.e2e.config.js --watchAll"
   },
-  "keywords": [],
+  "keywords": ["nodejs", "expressjs", "obedjs"],
   "author": "",
-  "license": "ISC",
-  "description": "A lightweight framework built on top of Express.js for rapidly developing APIs with Node.js and Express",
+  "license": "MIT",
+  "description": "A TypeScript-Powered Framework Built on Express.js for Scalable and Robust Applications",
   "dependencies": {
     "class-validator": "^0.14.1",
     "express": "^4.19.2",
