@@ -1,6 +1,6 @@
 # ObedJS
 
-A TypeScript-Powered Framework Built on Express.js for Scalable and Robust Applications
+> A TypeScript-Powered Framework Built on Express.js for Scalable and Robust Applications
 
 ## Features
 1. Easy-to-use CLI for generating controllers, services, routes, and more
