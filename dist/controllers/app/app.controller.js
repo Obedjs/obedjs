@@ -17,7 +17,7 @@ class AppController {
     getHello(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const message = yield this.service.getHello();
-            res.send(message);
+            return res.status(200).json({ message });
         });
     }
 }

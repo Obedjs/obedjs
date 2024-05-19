@@ -10,6 +10,6 @@ app.use(express_1.default.json());
 app.use('/', app_route_1.default);
 const PORT = parseInt(process.env.PORT || '3000', 10);
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Obedjs listening on port ${PORT}`);
 });
 exports.default = app;

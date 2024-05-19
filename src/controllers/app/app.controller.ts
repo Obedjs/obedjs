@@ -9,8 +9,8 @@ export class AppController {
     this.service = service; 
   }
 
-  public async getHello(req: Request, res: Response): Promise<void> {
+  public async getHello(req: Request, res: Response): Promise<any> {
   const message = await this.service.getHello();
-    res.send(message);
+   return res.status(200).json({message});
   }
 }

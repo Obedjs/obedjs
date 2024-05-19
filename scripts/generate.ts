@@ -5,6 +5,7 @@ import { createDirectory, writeFile } from './utils/fileHelpers';
 import { templates } from './utils/templates';
 import { colors } from './utils/colors';
 import * as fs from 'fs';
+import { dockerfileTemplate } from './templates/docker.template';
 
 const args = process.argv.slice(2);
 
@@ -20,12 +21,13 @@ const dirMap: { [key: string]: string } = {
   controller: `controllers/${lowerCaseName}`,
   service: `services/${lowerCaseName}`,
   route: `routes/${lowerCaseName}`,
-  model: `models`,
-  middleware: `middleware`,
-  config: `config`,
+  model: `models/${lowerCaseName}`,
+  middleware: `middlewares/${lowerCaseName}`,
+  config: `configs/${lowerCaseName}`,
   test: `controllers/${lowerCaseName}/__tests__`,
   e2e: `tests/e2e`,
-  dto:  `dto/${lowerCaseName}`,
+  dto:  `dtos/${lowerCaseName}`,
+  docker: `${dockerfileTemplate}`
 };
 
 
@@ -68,7 +70,11 @@ if (type === 'controller' || type === 'service' || type === 'e2e') {
   writeFile(filePath, content);
 }};
 
-
+const writeDockerfile = (content: string) => {
+  const filePath = path.join(process.cwd(), 'Dockerfile');
+  fs.writeFileSync(filePath, content);
+   console.log(`${colors.green}Generated ${type} at ${filePath}${colors.reset}`);
+};
 const generateE2ETestFile = (name: string) => {
   const template = templates.e2e;
   const dirPath = path.join('src', 'tests', 'e2e');
@@ -85,7 +91,6 @@ if (type === "all") {
    generateFile("controller", name);
    generateFile("service", name);
    generateFile("route", name);
-
    // Generate test files for all resource types
   generateTestFile("controller", name);
   generateTestFile("service", name);
@@ -93,19 +98,28 @@ if (type === "all") {
 
   // Generate e2e test file for the "route" type
   generateE2ETestFile(name);
+} else if(type === 'docker'){
+  const dockerfileContent = dockerfileTemplate(name);
+  writeDockerfile(dockerfileContent);
 } else {
-   generateFile(type, name);
-}
-
-//generateFile(type, name);
+generateFile(type, name);
 // Generate test files only if the type is not "e2e", "model", "middleware", or "config"
 
-if (type !== 'e2e' && type !== 'model' && type !== 'middleware' && type !== 'config') {
+if (type !== 'e2e' && type !== 'model' && type !== 'middleware' && type !== 'config' && type !== 'docker') {
   generateTestFile(type, name);
 }
 if (type === 'route') {
   generateE2ETestFile(name);
 }
+  //Generate test files only if type is not 'docker'
+  // if (type === 'controller' || type === 'service' || type === 'route') {
+  //   generateTestFile(type, name);
+  // } else if (type === 'e2e') {
+  //   generateE2ETestFile(name);
+  // }
+}
+
+
 
 
 

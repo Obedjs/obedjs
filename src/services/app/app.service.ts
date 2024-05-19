@@ -1,8 +1,6 @@
 
 export class AppService {
-  public async getHello(): Promise<any> {
-    return {
-      message: "Hello obedjs"
-    }
+  public async getHello(): Promise<string> {
+    return "Hello obedjs"
   }
 }

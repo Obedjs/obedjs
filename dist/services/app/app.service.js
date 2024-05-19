@@ -13,7 +13,7 @@ exports.AppService = void 0;
 class AppService {
     getHello() {
         return __awaiter(this, void 0, void 0, function* () {
-            return "Hello Obedjs";
+            return "Hello obedjs";
         });
     }
 }

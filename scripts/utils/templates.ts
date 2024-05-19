@@ -9,6 +9,7 @@ import { e2eTemplate } from '../templates/e2e.template';
 import { mongodbModelTemplate } from '../templates/mongodb-model-template';
 import { typeormEntityTemplate } from '../templates/typeorm-entity-template';
 import { dtoTemplate } from '../templates/dto.template';
+import { dockerfileTemplate } from '../templates/docker.template';
 
 export const templates = {
   controller: controllerTemplate,
@@ -21,6 +22,7 @@ export const templates = {
   e2e: e2eTemplate,
   modelMongo: mongodbModelTemplate,
   modelRdbms: typeormEntityTemplate,
-  dto: dtoTemplate
+  dto: dtoTemplate,
+  docker: dockerfileTemplate
 };
 
