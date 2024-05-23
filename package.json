@@ -12,7 +12,11 @@
     "test": "jest --config jest.config.js --watchAll",
     "test:e2e": "jest --config jest.e2e.config.js --watchAll"
   },
-  "keywords": ["nodejs", "expressjs", "obedjs"],
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "obedjs"
+  ],
   "author": "",
   "license": "MIT",
   "description": "A TypeScript-Powered Framework Built on Express.js for Scalable and Robust Applications",
@@ -21,6 +25,7 @@
     "express": "^4.19.2",
     "inquirer": "^9.2.22",
     "mongoose": "^8.4.0",
+    "obedjs-logger": "^1.0.2",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20"
   },

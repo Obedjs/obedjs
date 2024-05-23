@@ -1,5 +1,9 @@
 import express, { Application } from 'express';
 import appRoutes from './routes/app/app.route';  
+import Logger, { LogLevel } from 'obedjs-logger';
+
+const logger = new Logger(LogLevel.DEBUG, 'project.log');
+
 
 const app: Application = express();
 
@@ -9,7 +13,7 @@ app.use('/', appRoutes);
 const PORT: number = parseInt(process.env.PORT || '3000', 10);
 
 app.listen(PORT, () => {
-  console.log(`Obedjs listening on port ${PORT}`);
+  logger.info(`Obedjs listening on port ${PORT}`);
 });
 
 export default app;
